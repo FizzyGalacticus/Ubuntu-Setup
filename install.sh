@@ -33,6 +33,8 @@ else
 	rm -f google-chrome-stable_current_i386.deb
 fi
 
+sudo apt-get install mesa-common-dev &&
+sudo apt-get install libglu1-mesa-dev &&
 sudo apt-get install build-essential &&
 sudo apt-get install vlc &&
 sudo apt-get install foremost &&
