@@ -41,5 +41,11 @@ sudo apt-get install vlc &&
 sudo apt-get install foremost &&
 sudo apt-get remove --purge resolvconf && 
 sudo apt-get install --reinstall resolvconf &&
+sudo apt-get remove --purge firefox &&
+sudo apt-get remove --purge firefox-locale-en &&
+sudo apt-get remove --purge libreoffice-base-core &&
+sudo apt-get remove --purge libreoffice-core &&
+sudo apt-get remove --purge libreoffice-common &&
+sudo apt-get remove --purge libreoffice-style-human &&
 
 sudo apt-get upgrade
