@@ -2,6 +2,10 @@
 
 #This script is to help download & install useful software personally.
 
+
+sudo apt-get remove --purge resolvconf && 
+sudo apt-get install --reinstall resolvconf &&
+
 sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe multiverse" &&
 
 sudo apt-get update &&
@@ -39,8 +43,6 @@ sudo apt-get install git &&
 sudo apt-get install build-essential &&
 sudo apt-get install vlc &&
 sudo apt-get install foremost &&
-sudo apt-get remove --purge resolvconf && 
-sudo apt-get install --reinstall resolvconf &&
 sudo apt-get remove --purge firefox &&
 sudo apt-get remove --purge firefox-locale-en &&
 sudo apt-get remove --purge libreoffice-base-core &&
