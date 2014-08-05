@@ -38,5 +38,7 @@ sudo apt-get install libglu1-mesa-dev &&
 sudo apt-get install build-essential &&
 sudo apt-get install vlc &&
 sudo apt-get install foremost &&
+sudo apt-get remove --purge resolvconf && 
+sudo apt-get install --reinstall resolvconf &&
 
 sudo apt-get upgrade
