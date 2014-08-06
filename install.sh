@@ -8,6 +8,13 @@ cd ~/Downloads
 sudo apt-get remove --purge firefox &&
 sudo apt-get remove --purge firefox-locale-en &&
 
+#Remove Thunderbird
+sudo apt-get remove --purge thunderbird && 
+sudo apt-get remove --purge thunderbird-globalmenu && 
+sudo apt-get remove --purge thunderbird-gnome-support && 
+sudo apt-get remove --purge thunderbird-locale-en && 
+sudo apt-get remove --purge thunderbird-locale-en-us &&
+
 #Remove Libre Office
 sudo apt-get remove --purge libreoffice-base-core &&
 sudo apt-get remove --purge libreoffice-core &&
@@ -27,6 +34,13 @@ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc)
 #Update packages
 sudo apt-get update &&
 
+#Install Google Chrome dependencies
+sudo apt-get install libxss1 &&
+
+#Install Qt dependencies
+sudo apt-get install mesa-common-dev &&
+sudo apt-get install libglu1-mesa-dev &&
+
 #Install Qt && Google Chrome
 if [[ $(getconf LONG_BIT) = "64" ]]
 then
@@ -37,7 +51,6 @@ then
 	sudo ./qt-opensource-linux-x64-5.3.0.run &&
 
 	echo "Installing Google Chrome" &&
-	sudo apt-get install libxss1 &&
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
 	sudo dpkg -i google-chrome-stable_current_amd64.deb &&
 	rm -f google-chrome-stable_current_amd64.deb
@@ -53,10 +66,6 @@ else
 	sudo dpkg -i google-chrome-stable_current_i386.deb &&
 	rm -f google-chrome-stable_current_i386.deb
 fi
-
-#Install Qt dependencies
-sudo apt-get install mesa-common-dev &&
-sudo apt-get install libglu1-mesa-dev &&
 
 #Install Git
 sudo apt-get install git &&
