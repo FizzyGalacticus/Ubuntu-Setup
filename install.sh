@@ -2,6 +2,18 @@
 
 #This script is to help download & install useful software personally.
 
+cd ~/Downloads
+
+#Remove Firefox
+sudo apt-get remove --purge firefox &&
+sudo apt-get remove --purge firefox-locale-en &&
+
+#Remove Libre Office
+sudo apt-get remove --purge libreoffice-base-core &&
+sudo apt-get remove --purge libreoffice-core &&
+sudo apt-get remove --purge libreoffice-common &&
+sudo apt-get remove --purge libreoffice-style-human &&
+
 #Disable web advertisements in dash
 wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash &&
 
@@ -25,6 +37,7 @@ then
 	sudo ./qt-opensource-linux-x64-5.3.0.run &&
 
 	echo "Installing Google Chrome" &&
+	sudo apt-get install libxss1 &&
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
 	sudo dpkg -i google-chrome-stable_current_amd64.deb &&
 	rm -f google-chrome-stable_current_amd64.deb
@@ -57,16 +70,6 @@ sudo apt-get install vlc &&
 #Install 'foremost' and 'scalpel' forensic tools
 sudo apt-get install foremost &&
 sudo apt-get install scalpel &&
-
-#Remove Firefox
-sudo apt-get remove --purge firefox &&
-sudo apt-get remove --purge firefox-locale-en &&
-
-#Remove Libre Office
-sudo apt-get remove --purge libreoffice-base-core &&
-sudo apt-get remove --purge libreoffice-core &&
-sudo apt-get remove --purge libreoffice-common &&
-sudo apt-get remove --purge libreoffice-style-human &&
 
 #Upgrade all packages
 sudo apt-get upgrade
