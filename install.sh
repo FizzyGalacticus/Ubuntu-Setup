@@ -124,6 +124,13 @@ echo "Installing Foremost and Scalpel..." &&
 sudo apt-get install foremost --yes > /dev/null &&
 sudo apt-get install scalpel --yes > /dev/null &&
 
+#Install general developement/execution packages
+echo "Installing misc. needed packages..." &&
+sudo apt-get install lib32z1 --yes > /dev/null &&
+sudo apt-get install lib32ncurses5 --yes > /dev/null &&
+sudo apt-get install lib32bz2-1.0 --yes > /dev/null &&
+sudo apt-get install lib32stdc++6 --yes > /dev/null &&
+
 #Remove unecessary packages
 echo "Removing unecessary packages..." &&
 sudo apt-get autoremove --yes > /dev/null &&
