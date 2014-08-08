@@ -63,7 +63,7 @@ if [[ $(getconf LONG_BIT) = "64" ]]
 then
 	echo "64bit Detected" &&
 	echo "Installing Qt" &&
-	wget http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-linux-x64-5.3.0.run &&
+	wget http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-linux-x64-5.3.0.run /dev/null &&
 	sudo chmod +x qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 	sudo ./qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 	sudo rm qt-opensource-linux-x64-5.3.0.run > /dev/null &&
@@ -78,7 +78,7 @@ then
 	wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip > /dev/null &&
 	sudo unzip adt-bundle-linux-x86_64-20140702.zip > /dev/null &&
 	sudo mv adt-bundle-linux-x86_64-20140702.zip ADT > /dev/null &&
-	sudo mv ADT /opt/ > /dev/null &&
+	sudo mv ADT /opt/ > /dev/null
 	
 else
 	echo "32bit Detected" &&
@@ -98,13 +98,13 @@ else
 	wget http://dl.google.com/android/adt/adt-bundle-linux-x86-20140702.zip > /dev/null &&
 	sudo unzip adt-bundle-linux-x86-20140702.zip > /dev/null &&
 	sudo mv adt-bundle-linux-x86-20140702.zip ADT > /dev/null &&
-	sudo mv ADT /opt/ > /dev/null &&
+	sudo mv ADT /opt/ > /dev/null
 fi
 
 #Add ADT directories to PATH
-PATH=${PATH}:/opt/ADT/sdk/tools &&
-PATH=${PATH}:/opt/ADT/sdk/platform-tools &&
-PATH=${PATH}:/opt/ADT/eclipse &&
+PATH=${PATH}:/opt/ADT/sdk/tools > /dev/null &&
+PATH=${PATH}:/opt/ADT/sdk/platform-tools > /dev/null &&
+PATH=${PATH}:/opt/ADT/eclipse > /dev/null &&
 sudo echo "PATH DEFAULT=${PATH}" >> ~/.pam_environment &&
 
 #Install Git
