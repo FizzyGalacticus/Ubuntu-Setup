@@ -77,7 +77,7 @@ then
 	sudo apt-get install libgl1-mesa-dev:i386 --yes > /dev/null &&
 	wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip > /dev/null &&
 	sudo unzip adt-bundle-linux-x86_64-20140702.zip > /dev/null &&
-	sudo mv adt-bundle-linux-x86_64-20140702.zip ADT > /dev/null &&
+	sudo mv adt-bundle-linux-x86_64-20140702 ADT > /dev/null &&
 	sudo mv ADT /opt/ > /dev/null
 	
 else
@@ -97,7 +97,7 @@ else
 	sudo apt-get install libgl1-mesa-dev --yes > /dev/null &&
 	wget http://dl.google.com/android/adt/adt-bundle-linux-x86-20140702.zip > /dev/null &&
 	sudo unzip adt-bundle-linux-x86-20140702.zip > /dev/null &&
-	sudo mv adt-bundle-linux-x86-20140702.zip ADT > /dev/null &&
+	sudo mv adt-bundle-linux-x86-20140702 ADT > /dev/null &&
 	sudo mv ADT /opt/ > /dev/null
 fi
 
