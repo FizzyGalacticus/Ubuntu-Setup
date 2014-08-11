@@ -137,4 +137,12 @@ sudo apt-get autoremove --yes > /dev/null &&
 
 #Upgrade all packages
 echo "Upgrading installed packages..." &&
-sudo apt-get upgrade --yes > /dev/null 
+sudo apt-get upgrade --yes > /dev/null &&
+sudo apt-get dist-upgrade --yes > /dev/null &&
+
+#Install Spotify
+echo "Installing Spotify..." && 
+sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" > /dev/null &&
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59 > /dev/null &&
+sudo apt-get update -qq > /dev/null &&
+sudo apt-get install spotify-client > /dev/null 
