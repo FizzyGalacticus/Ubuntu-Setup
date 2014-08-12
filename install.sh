@@ -107,6 +107,9 @@ PATH=${PATH}:/opt/ADT/sdk/platform-tools > /dev/null &&
 PATH=${PATH}:/opt/ADT/eclipse > /dev/null &&
 sudo echo "PATH DEFAULT=${PATH}" >> ~/.pam_environment &&
 
+#Clear up dependencies
+sudo apt-get -f install --yes > /dev/null &&
+
 #Install Git
 echo "Installing Git..." &&
 sudo apt-get install git --yes > /dev/null &&
