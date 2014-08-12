@@ -63,7 +63,7 @@ if [[ $(getconf LONG_BIT) = "64" ]]
 then
 	echo "64bit Detected" &&
 	echo "Installing Qt" &&
-	wget http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-linux-x64-5.3.0.run /dev/null &&
+	wget http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 	sudo chmod +x qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 	sudo ./qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 	sudo rm qt-opensource-linux-x64-5.3.0.run > /dev/null &&
