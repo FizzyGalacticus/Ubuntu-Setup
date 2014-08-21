@@ -48,6 +48,7 @@ sudo apt-get install --reinstall resolvconf --yes > /dev/null &&
 #Install Google Chrome dependencies
 echo "Installing Google Chrome dependencies..." &&
 sudo apt-get install libxss1 --yes > /dev/null &&
+sudo apt-get install libappindicator1 --yes > /dev/null &&
 
 #Install Qt dependencies
 echo "Installing Qt dependencies..." &&
