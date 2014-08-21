@@ -2,6 +2,9 @@
 
 #This script is to help download & install useful software personally.
 
+#Lock kernel version
+echo $(dpkg -l "*$(uname -r)*" | grep image | awk '{print $2}') hold | dpkg --set-selections > /dev/null &&
+
 cd ~/Downloads
 
 #Enable the universe and multiverse repositories
@@ -63,40 +66,44 @@ sudo apt-get install openjdk-7-jdk --yes > /dev/null &&
 if [[ $(getconf LONG_BIT) = "64" ]]
 then
 	echo "64bit Detected" &&
-	echo "Installing Qt" &&
+	echo "Downloading installation files..." &&
 	wget http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-linux-x64-5.3.0.run > /dev/null &&
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > /dev/null &&
+	wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip > /dev/null &&
+
+	echo "Installing Qt" &&
 	sudo chmod +x qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 	sudo ./qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 	sudo rm qt-opensource-linux-x64-5.3.0.run > /dev/null &&
 
 	echo "Installing Google Chrome" &&
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > /dev/null &&
 	sudo dpkg -i google-chrome-stable_current_amd64.deb > /dev/null &&
 	sudo rm google-chrome-stable_current_amd64.deb > /dev/null &&
 
-	echo "Downloading and installing ADT Bundle" &&
+	echo "Installing ADT Bundle" &&
 	sudo apt-get install libgl1-mesa-dev:i386 --yes > /dev/null &&
-	wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip > /dev/null &&
 	sudo unzip adt-bundle-linux-x86_64-20140702.zip > /dev/null &&
 	sudo mv adt-bundle-linux-x86_64-20140702 ADT > /dev/null &&
 	sudo mv ADT /opt/ > /dev/null
 	
 else
 	echo "32bit Detected" &&
-	echo "Installing Qt" &&
+	echo "Downloading installation files..." &&
 	wget http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-linux-x86-5.3.0.run > /dev/null &&
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb > /dev/null &&
+	wget http://dl.google.com/android/adt/adt-bundle-linux-x86-20140702.zip > /dev/null &&
+
+	echo "Installing Qt" &&
 	sudo chmod +x qt-opensource-linux-x86-5.3.0.run > /dev/null &&
 	sudo ./qt-opensource-linux-x86-5.3.0.run > /dev/null &&
 	sudo rm qt-opensource-linux-x86-5.3.0.run > /dev/null &&
 
 	echo "Installing Google Chrome" > /dev/null &&
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb > /dev/null &&
 	sudo dpkg -i google-chrome-stable_current_i386.deb --yes > /dev/null &&
 	sudo rm google-chrome-stable_current_i386.deb > /dev/null &&
 
 	echo "Downloading and installing ADT Bundle" &&
 	sudo apt-get install libgl1-mesa-dev --yes > /dev/null &&
-	wget http://dl.google.com/android/adt/adt-bundle-linux-x86-20140702.zip > /dev/null &&
 	sudo unzip adt-bundle-linux-x86-20140702.zip > /dev/null &&
 	sudo mv adt-bundle-linux-x86-20140702 ADT > /dev/null &&
 	sudo mv ADT /opt/ > /dev/null
@@ -140,9 +147,9 @@ echo "Removing unecessary packages..." &&
 sudo apt-get autoremove --yes > /dev/null &&
 
 #Upgrade all packages
-echo "Upgrading installed packages..." &&
-sudo apt-get upgrade --yes > /dev/null &&
-sudo apt-get dist-upgrade --yes > /dev/null &&
+#echo "Upgrading installed packages..." &&
+#sudo apt-get upgrade --yes > /dev/null &&
+#sudo apt-get dist-upgrade --yes > /dev/null &&
 
 #Install Spotify
 echo "Installing Spotify..." && 
